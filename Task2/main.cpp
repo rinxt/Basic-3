@@ -14,7 +14,7 @@ public:
 };
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+    system("chcp 1251");
     std::string input;
     int initial_value = 1;
     std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
@@ -22,6 +22,7 @@ int main() {
     if (input == "да") {
         std::cout << "Введите начальное значение счётчика: ";
         std::cin >> initial_value;
+        std::getline(std::cin, input);
     }
     Counter counter(initial_value);
     std::cout << "Введите команду ('+', '-', '=' or 'x'): ";
